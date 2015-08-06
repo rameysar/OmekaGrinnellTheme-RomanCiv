@@ -1,22 +1,12 @@
 <?php
-$title = __('Browse Exhibits');
+$title = __('');
 echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 ?>
-<h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
 <?php if (count($exhibits) > 0): ?>
 
-<nav class="navigation" id="secondary-nav">
-    <?php echo nav(array(
-        array(
-            'label' => __('Browse All'),
-            'uri' => url('exhibits')
-        ),
-        array(
-            'label' => __('Browse by Tag'),
-            'uri' => url('exhibits/tags')
-        )
-    )); ?>
-</nav>
+<?php if (get_theme_option('Homepage Text')): ?>
+<p><?php echo get_theme_option('Homepage Text'); ?></p>
+<?php endif; ?>
 
 <?php echo pagination_links(); ?>
 

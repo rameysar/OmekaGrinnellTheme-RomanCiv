@@ -22,8 +22,9 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_url('//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Droid+Serif:400,700');
-    queue_css_file('normalize');
+    queue_css_url('//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Droid+Serif:400,700|Oxygen:400');
+	//queue_css_file('normalize'); 
+    queue_css_file('bootstrap/css/bootstrap', 'screen');
     queue_css_file('style', 'screen');
     queue_css_file('print', 'print');
     echo head_css();
@@ -35,6 +36,9 @@
     <?php queue_js_file('jquery-extra-selectors'); ?>
     <?php queue_js_file('vendor/respond'); ?>
     <?php queue_js_file('globals'); ?>
+    <?php #queue_js_file('vendor/masonry'); ?>
+    <?php #queue_js_file('vendor/imagesloaded'); ?>
+    <?php queue_js_file('vendor/bootstrap'); ?>
     <?php echo head_js(); ?>
 </head>
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
@@ -50,7 +54,7 @@
             </div>
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
         </header>
-
+        <a href="http://omekax.grinnell.edu/Classics/items/show/153" target="_blank"><div id="classics-banner"></div></a>
         <nav class="top">
             <?php echo public_nav_main(); ?>
         </nav>
